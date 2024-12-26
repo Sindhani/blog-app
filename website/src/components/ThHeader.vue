@@ -1,9 +1,10 @@
 <script setup>
 import BlackRoundedBtn from "components/BlackRoundedBtn.vue";
 import SignInForm from "components/SignInForm.vue";
-import {ref} from "vue";
+import { ref} from "vue";
 import SignUpForm from "components/SignUpForm.vue";
-const modalForm = 'sign-in'
+const modalForm = ref( 'sign-in')
+
 const menu = [
     'Features',
     'Contact Team',

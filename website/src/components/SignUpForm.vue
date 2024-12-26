@@ -44,9 +44,6 @@ defineEmits(['signIn'])
             <q-icon :name="visibility ? 'visibility': 'visibility_off'" @click="visibility = !visibility"></q-icon>
           </template>
         </q-input>
-        <div class="tw-text-[13px] tw-text-base tw-font-normal tw-text-right">
-          Forgot Password ?
-        </div>
       </div>
     </div>
     <div class="tw-flex tw-flex-col tw-gap-y-2.5">
@@ -63,7 +60,7 @@ defineEmits(['signIn'])
     </div>
   </q-card-section>
   <q-card-section class="tw-p-0 tw-m-0">
-    <q-btn class="tw-rounded-md tw-w-full tw-bg-dark-gray tw-text-white" no-wrap no-caps >Sign in</q-btn>
+    <q-btn class="tw-rounded-md tw-w-full tw-bg-dark-gray tw-text-white" no-wrap no-caps >Sign up</q-btn>
   </q-card-section>
   <q-card-section class="tw-mt-6 tw-p-0 tw-text-center tw-pb-2">
     <div class="tw-text-base tw-font-normal">
