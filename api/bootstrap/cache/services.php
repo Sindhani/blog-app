@@ -34,6 +34,7 @@
     30 => 'Pest\\Laravel\\PestServiceProvider',
     31 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     32 => 'App\\Providers\\AppServiceProvider',
+    33 => 'App\\Providers\\HorizonServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,6 +56,7 @@
     15 => 'Pest\\Laravel\\PestServiceProvider',
     16 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     17 => 'App\\Providers\\AppServiceProvider',
+    18 => 'App\\Providers\\HorizonServiceProvider',
   ),
   'deferred' => 
   array (

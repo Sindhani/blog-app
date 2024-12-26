@@ -1,1 +1,16 @@
 // app global css in SCSS form
+@font-face {
+  font-family: spirax;
+  src: url(../assets/fonts/spirax-regular.ttf);
+}
+@font-face {
+  font-family: scheherazadenew;
+  src: url(../assets/fonts/scheherazadenew-bold.ttf);
+}
+
+.spirax{
+  font-family: spirax sans-serif;
+}
+.scheherazadenew-bold{
+  font-family: scheherazadenew sans-serif;
+}
