@@ -31,10 +31,7 @@ class BlogManagementService
 
     public function getPaginatedBlogs(int $authorId = null): LengthAwarePaginator
     {
-
-        $cacheKey = 'blog_list';
-
-        // Check if the data is cached
+        $cacheKey = 'blog_list_page_' . (request('page') ?? 1);
         return Cache::remember($cacheKey, now()->addMinutes(10), function () use ($authorId) {
             return Blog::query()
                 ->with(['author', 'comments'])
@@ -49,14 +46,29 @@ class BlogManagementService
     public function update(Blog $blog, BlogDto $blogDto): Blog
     {
         $blog->update($blogDto->toArray());
-        Cache::forget('blog_list');
+        $this->forgetCache();
         return $blog;
+    }
+
+    public function forgetCache(): void
+    {
+        $cacheKey = 'blog_data';
+        $perPage = 10;
+
+        $totalBlogs = Blog::query()->count();
+
+        $totalPages = ceil($totalBlogs / $perPage);
+
+        for ($page = 1; $page <= $totalPages; $page++) {
+            Cache::forget("{$cacheKey}_page_{$page}");
+        }
+
     }
 
     public function delete(Blog $blog): ?bool
     {
         $deleted = $blog->delete();
-        Cache::forget('blog_list');
+        $this->forgetCache();
         return $deleted;
     }
 
@@ -78,7 +90,7 @@ class BlogManagementService
         }
         $blog = Blog::query()->create($data);
 
-        Cache::forget('blog_list');
+        $this->forgetCache();
 
         return $blog;
     }
@@ -92,5 +104,4 @@ class BlogManagementService
             ->whereDate('publish_date', Carbon::today()->format('Y-m-d'))
             ->get();
     }
-
 }

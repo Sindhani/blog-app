@@ -29,6 +29,8 @@ export const useBlogStore = defineStore('blog', {
                 const {data, meta} = response.data;
                 this.blogs = page === 1 ? data : this.blogs.concat(data);
                 this.currentPage = meta.current_page;
+                console.log({cp: this.currentPage, meta})
+
                 this.totalPages = meta.total;
             } catch (err) {
                 this.error = err.message || 'Failed to fetch blogs.';
