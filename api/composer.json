@@ -10,10 +10,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "cviebrock/eloquent-sluggable": "^11.0",
+        "elasticsearch/elasticsearch": "^7.17",
         "laravel/framework": "^11.31",
         "laravel/horizon": "^5.30",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "mailerlite/laravel-elasticsearch": "^11.1",
         "predis/predis": "^2.3",
+        "tightenco/ziggy": "^2.4",
         "tymon/jwt-auth": "^2.1"
     },
     "require-dev": {

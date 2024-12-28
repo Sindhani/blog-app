@@ -17,11 +17,14 @@
   "dependencies": {
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
+    "md-editor-v3": "^5.1.1",
     "pinia": "^2.0.11",
     "quasar": "^2.16.0",
+    "vform": "^2.1.2",
     "vue": "^3.4.18",
     "vue-i18n": "^9.0.0",
-    "vue-router": "^4.0.0"
+    "vue-router": "^4.0.0",
+    "ziggy-js": "^2.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -29,6 +32,7 @@
     "@quasar/app-vite": "^2.0.0",
     "@vue/eslint-config-prettier": "^10.1.0",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.7",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

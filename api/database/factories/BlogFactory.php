@@ -2,13 +2,15 @@
 
 namespace Database\Factories;
 
+use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog>
+ * @extends Factory<Blog>
  */
-class BlogFactory extends Factory{
+class BlogFactory extends Factory
+{
 
     /**
      * Define the model's default state.
@@ -20,12 +22,13 @@ class BlogFactory extends Factory{
         return [
             'title' => fake()->sentence,
             'excerpt' => fake()->text(150),
-            'description' => fake()->paragraphs(5, true),
+            'content' => fake()->paragraphs(5, true),
             'image' => fake()->imageUrl(),
             'keywords' => json_encode(fake()->words(5)),
             'seo_metadata' => json_encode(['meta_title' => fake()->sentence, 'meta_description' => fake()->text]),
-            'publish_date' => now(),
-            'is_published' => fake()->boolean,
+            'publish_date' => now()->format('m/d/Y'),
+            'status' => fake()->randomElement(['published', 'draft']),
+            'is_scheduled' => fake()->boolean,
             'author_id' => User::factory(),
         ];
     }

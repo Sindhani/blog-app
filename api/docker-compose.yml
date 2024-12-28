@@ -1,8 +1,8 @@
 services:
     laravel.test:
         build:
-            context: 'api/vendor/laravel/sail/runtimes/8.4'
-            dockerfile: api/vendor/laravel/sail/runtimes/8.4/Dockerfile
+            context: 'vendor/laravel/sail/runtimes/8.4'
+            dockerfile: ./vendor/laravel/sail/runtimes/8.4/Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
         image: 'sail-8.4/app'
@@ -24,6 +24,22 @@ services:
         depends_on:
             - mysql
             - redis
+
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.4.0
+        environment:
+            - discovery.type=single-node
+            - xpack.security.enabled=false  # Disable security (required for HTTP)
+            - xpack.security.transport.ssl.enabled=false  # Disable SSL on transport layer
+            - xpack.security.http.ssl.enabled=false
+        ports:
+            - 9200:9200
+        volumes:
+            - elasticsearch-data:/usr/share/elasticsearch/data
+        networks:
+            - sail
+
+
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -70,4 +86,6 @@ volumes:
     sail-mysql:
         driver: local
     sail-redis:
+        driver: local
+    elasticsearch-data:
         driver: local

@@ -277,6 +277,15 @@
       <path value="$PROJECT_DIR$/api/vendor/fruitcake/php-cors" />
       <path value="$PROJECT_DIR$/api/vendor/predis/predis" />
       <path value="$PROJECT_DIR$/api/vendor/laravel/horizon" />
+      <path value="$PROJECT_DIR$/api/vendor/tightenco/ziggy" />
+      <path value="$PROJECT_DIR$/api/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/api/vendor/elasticsearch/elasticsearch" />
+      <path value="$PROJECT_DIR$/api/vendor/mailerlite/laravel-elasticsearch" />
+      <path value="$PROJECT_DIR$/api/vendor/ezimuel/ringphp" />
+      <path value="$PROJECT_DIR$/api/vendor/ezimuel/guzzlestreams" />
+      <path value="$PROJECT_DIR$/api/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/api/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/api/vendor/cviebrock/eloquent-sluggable" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

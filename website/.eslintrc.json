@@ -1,4 +1,7 @@
 {
+  "globals": {
+    "process": "readonly"
+  },
   "env": {
     "browser": true,
     "node": true,
@@ -14,8 +17,8 @@
     "sourceType": "module"
   },
   "plugins": [
-    "vue"
-    //    "prettier"
+    "vue",
+    "prettier"
   ],
   "rules": {
     "prettier/prettier": "error",

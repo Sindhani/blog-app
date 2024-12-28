@@ -17,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Vue Composition API Component" />
       </list>
     </option>
@@ -26,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -287,6 +289,15 @@
       <path value="$PROJECT_DIR$/api/vendor/fruitcake/php-cors" />
       <path value="$PROJECT_DIR$/api/vendor/predis/predis" />
       <path value="$PROJECT_DIR$/api/vendor/laravel/horizon" />
+      <path value="$PROJECT_DIR$/api/vendor/tightenco/ziggy" />
+      <path value="$PROJECT_DIR$/api/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/api/vendor/elasticsearch/elasticsearch" />
+      <path value="$PROJECT_DIR$/api/vendor/mailerlite/laravel-elasticsearch" />
+      <path value="$PROJECT_DIR$/api/vendor/ezimuel/ringphp" />
+      <path value="$PROJECT_DIR$/api/vendor/ezimuel/guzzlestreams" />
+      <path value="$PROJECT_DIR$/api/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/api/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/api/vendor/cviebrock/eloquent-sluggable" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -303,7 +314,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sindhani/Documents/GitHub/blog-app/website/src/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sindhani/Documents/GitHub/blog-app/website/src/pages/blogs/components&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -330,13 +341,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/website/src/pages/blogs/components" />
+      <recent name="$PROJECT_DIR$/website/src/stores" />
+      <recent name="$PROJECT_DIR$/website/src" />
+      <recent name="$PROJECT_DIR$/website/src/boot" />
       <recent name="$PROJECT_DIR$/website/src/components" />
-      <recent name="$PROJECT_DIR$/website/src/assets/fonts" />
-      <recent name="$PROJECT_DIR$/website" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/website" />
       <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$/website" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -371,7 +384,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735147877218</updated>
-      <workItem from="1735147878291" duration="19085000" />
+      <workItem from="1735147878291" duration="84671000" />
     </task>
     <servers />
   </component>

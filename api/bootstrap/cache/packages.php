@@ -1,4 +1,11 @@
 <?php return array (
+  'cviebrock/eloquent-sluggable' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
+    ),
+  ),
   'laravel/horizon' => 
   array (
     'aliases' => 
@@ -24,11 +31,29 @@
       0 => 'Laravel\\Sail\\SailServiceProvider',
     ),
   ),
+  'laravel/sanctum' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Sanctum\\SanctumServiceProvider',
+    ),
+  ),
   'laravel/tinker' => 
   array (
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'mailerlite/laravel-elasticsearch' => 
+  array (
+    'aliases' => 
+    array (
+      'Elasticsearch' => 'MailerLite\\LaravelElasticsearch\\Facade',
+    ),
+    'providers' => 
+    array (
+      0 => 'MailerLite\\LaravelElasticsearch\\ServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -57,6 +82,13 @@
     'providers' => 
     array (
       0 => 'Pest\\Laravel\\PestServiceProvider',
+    ),
+  ),
+  'tightenco/ziggy' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
     ),
   ),
   'tymon/jwt-auth' => 
