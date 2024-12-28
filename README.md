@@ -47,7 +47,10 @@ Make sure you have the following installed:
 
 In the backend folder, copy the .env.example to .env:
 
-```cp .env.example .env ```
+```bash 
+cp .env.example .env
+```
+
 Set Up Database Credentials in the .env File
 To configure the database connection, follow these steps:
 
@@ -70,7 +73,9 @@ To configure the database connection, follow these steps:
 
 Install the necessary PHP dependencies using Docker and Sail:
 
-```./vendor/bin/sail up -d ```
+```bash 
+./vendor/bin/sail up -d
+```
 
 This will start the Docker containers for the backend, including the database.
 
