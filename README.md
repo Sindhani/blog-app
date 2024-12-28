@@ -168,31 +168,32 @@ The frontend will be available at ```http://localhost:9000```.
 Once both the frontend and backend are running, follow these steps:
 
 1. Register a New User
-   • Click on Sign In button on right top sign up.
+    - Click on Sign In button on right top sign up.
 2. Send OTP
-   • Check your email (MailTrap or your provider) for the OTP.
-   • Enter the OTP on the frontend to log in.
+    - Check your email (MailTrap or your provider) for the OTP.
+    - Enter the OTP on the frontend to log in.
 3. Create a New Post
-   • After logging in, click the “Write” button.
-   • Add the post title and content, then submit it.
+    - After logging in, click the “Write” button.
+    - Add the post title and content, then submit it.
 4. Read Posts
-   • Go to the Read Post section to see all blog posts.
-   • Click on a post title to view it in detail.
-   • You can also add comments to the post.
+    - Go to the Read Post section to see all blog posts.
+    - Click on a post title to view it in detail.
+    - You can also add comments to the post.
 
 # Troubleshooting
 
-• API or Frontend Not Working: Ensure Docker is running (docker-compose up).
-• Email Delivery Issues: Double-check the email provider settings in the .env file.
-• Frontend Issues: Check the browser’s console and network tab for errors.
-• Backend Issues: Use docker logs or Laravel logs for troubleshooting.
+- API or Frontend Not Working: Ensure Docker is running (docker-compose up).
+- Email Delivery Issues: Double-check the email provider settings in the .env file.
+- Frontend Issues: Check the browser’s console and network tab for errors.
+- Backend Issues: Use docker logs or Laravel logs for troubleshooting.
 
 # Conclusion
 
 By following these steps, you’ll have the frontend and backend set up and running locally. You’ll be able to:
-• Register users,
-• Create and view posts,
-• Manage blog posts and comments.
+
+- Register users,
+- Create and view posts,
+- Manage blog posts and comments.
 
 This guide is now streamlined to make it easier to follow the setup process. Let me know if you need further
 clarifications!

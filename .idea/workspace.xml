@@ -26,7 +26,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/api" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -384,7 +384,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735147877218</updated>
-      <workItem from="1735147878291" duration="91436000" />
+      <workItem from="1735147878291" duration="91541000" />
     </task>
     <servers />
   </component>
