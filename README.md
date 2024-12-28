@@ -147,7 +147,7 @@ cd website
 In the website/.env file, set the API_URL to the backend’s URL (usually http://localhost:80 if using Sail):
 
 ```dotenv 
-API_URL=http://localhost:80
+API_URL=http://localhost:80/api
 ```
 
 ## 3. Install Frontend Dependencies
@@ -173,7 +173,7 @@ The frontend will be available at ```http://localhost:9000```.
 Once both the frontend and backend are running, follow these steps:
 
 1. Register a New User
-    - Click on Sign In button on right top sign up.
+    - Click on Sign In button on "right top" to sign up.
 2. Send OTP
     - Check your email (MailTrap or your provider) for the OTP.
     - Enter the OTP on the frontend to log in.
@@ -184,10 +184,12 @@ Once both the frontend and backend are running, follow these steps:
     - Go to the Read Post section to see all blog posts.
     - Click on a post title to view it in detail.
     - You can also add comments to the post.
+5. Search Posts
+    - Click on the Search bar to search gloablly
 
 # Troubleshooting
 
-- API or Frontend Not Working: Ensure Docker is running (docker-compose up).
+- API or Frontend Not Working: Ensure Docker is running (sail up).
 - Email Delivery Issues: Double-check the email provider settings in the .env file.
 - Frontend Issues: Check the browser’s console and network tab for errors.
 - Backend Issues: Use docker logs or Laravel logs for troubleshooting.
@@ -199,6 +201,3 @@ By following these steps, you’ll have the frontend and backend set up and runn
 - Register users,
 - Create and view posts,
 - Manage blog posts and comments.
-
-This guide is now streamlined to make it easier to follow the setup process. Let me know if you need further
-clarifications!
