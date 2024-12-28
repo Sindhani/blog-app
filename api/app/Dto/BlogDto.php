@@ -17,6 +17,7 @@ class BlogDto
         public UploadedFile $image,
         public bool         $isScheduled = false,
         public ?string      $publishDate = null,
+        public ?string      $publishTime = null,
     )
     {
     }
@@ -32,6 +33,7 @@ class BlogDto
             image: $request->file('image'),
             isScheduled: $request->get('is_scheduled'),
             publishDate: $request->get('publish_date'),
+            publishTime: $request->get('publish_time'),
         );
     }
 
@@ -47,6 +49,7 @@ class BlogDto
             'publish_date' => $this->publishDate,
             'author_id' => auth()->id(),
             'is_scheduled' => $this->isScheduled,
+            'publish_time' => $this->publishTime,
         ];
     }
 }

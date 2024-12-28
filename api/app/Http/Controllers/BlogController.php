@@ -24,6 +24,7 @@ class BlogController extends Controller
     {
         $blog->loadMissing('comments', 'author');
         $blog->loadCount('comments');
+
         return response()->json($blog);
     }
 

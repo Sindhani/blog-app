@@ -29,7 +29,8 @@ class CreateElasticsearchIndex extends Command
                     'properties' => [
                         'title' => ['type' => 'text'],
                         'content' => ['type' => 'text'],
-                        'keywords' => ['type' => 'text'],
+                        'keywords' => ['type' => 'keyword'],
+                        'seo_metadata' => ['type' => 'object'],
                         'excerpt' => ['type' => 'text'],
                     ],
                 ],

@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->json('seo_metadata')->nullable();
             $table->tinyInteger('is_scheduled')->default(0);
             $table->date('publish_date')->nullable();
+            $table->time('publish_time')->nullable();
             $table->string('status')->default(BlogStatus::PUBLISHED);
             $table->foreignIdFor(User::class, 'author_id')->constrained();
             $table->timestamps();

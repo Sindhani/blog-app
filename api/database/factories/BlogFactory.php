@@ -26,7 +26,7 @@ class BlogFactory extends Factory
             'image' => fake()->imageUrl(),
             'keywords' => json_encode(fake()->words(5)),
             'seo_metadata' => json_encode(['meta_title' => fake()->sentence, 'meta_description' => fake()->text]),
-            'publish_date' => now()->format('m/d/Y'),
+            'publish_date' => null,
             'status' => fake()->randomElement(['published', 'draft']),
             'is_scheduled' => fake()->boolean,
             'author_id' => User::factory(),

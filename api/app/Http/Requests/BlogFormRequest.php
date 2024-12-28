@@ -28,6 +28,7 @@ class BlogFormRequest extends FormRequest
             'excerpt' => 'required',
             'is_scheduled' => 'nullable',
             'publish_date' => 'nullable',
+            'publish_time' => 'nullable',
             'keywords' => 'required|array',
             'seo_metadata' => 'required|array',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'

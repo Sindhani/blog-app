@@ -2,6 +2,38 @@ Project Setup Guide
 
 This guide helps you get the frontend (website) and backend (API) up and running locally in a monorepo project.
 
+## DB SCHEMA
+
+![DB-Schema](db_schema.png)
+
+## Redis Caching Strategy Implementation
+
+In my project, I have implemented Redis as a caching layer to improve the performance and reduce the load on the
+database. The strategy focuses on caching frequently accessed data and ensuring that data retrieval is faster.
+
+- Data Cached: I cache data that is frequently accessed and doesn’t change often, such as product details, user
+  profiles, or blog posts.
+- Cache Miss and Hit: When data is requested, the system first checks if it’s available in the Redis cache (cache hit).
+  If it’s not found (cache miss), the data is fetched from the database and stored in Redis for subsequent requests.
+- TTL (Time to Live): I set a TTL on cache entries for automatic expiration after a certain time i.e, 5 Min. This
+  ensures that outdated or stale data is removed from the cache and doesn’t stay in memory unnecessarily.
+- Cache Invalidation: I use cache invalidation techniques to ensure that when data in the database is updated, the cache
+  is either updated or cleared to reflect the new data. This is done by manually clearing the relevant cache entries
+  when updates or changes occur in the database.
+
+## Elasticsearch Indexing Implementation
+
+For search functionality, I have implemented Elasticsearch to index and search data efficiently. The indexing strategy
+focuses on defining mappings and settings that optimize search queries and ensure fast data retrieval.
+
+- Index Created: I have created an Elasticsearch index for storing blog posts, which includes fields like title,
+  content, keywords, seo_metadata, and excerpt.
+- Field Mappings: For efficient searching, I defined field types as text for full-text search fields like title and
+  content, and keyword for exact match fields like keywords. I used object for seo_metadata to store structured data in
+  JSON format.
+- Sharding and Replication: The index is set up with a single shard and replica to balance between performance and
+  redundancy, ensuring that data is available even in case of node failure.
+
 # Prerequisites
 
 Make sure you have the following installed:
@@ -16,6 +48,23 @@ Make sure you have the following installed:
 In the backend folder, copy the .env.example to .env:
 
 ```cp .env.example .env ```
+Set Up Database Credentials in the .env File
+To configure the database connection, follow these steps:
+
+1. Open the .env File
+   Navigate to the root of your Laravel project and open the .env file.
+2. Configure the Database Credentials
+   Update the following database-related entries with the appropriate values. Do not use the root user, as there is
+   already a **root** user configured in the system.
+   Example settings:
+
+```dotenv DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password 
+ ```
 
 ### 2. Install Dependencies
 
@@ -29,7 +78,8 @@ This will start the Docker containers for the backend, including the database.
 
 If using MailTrap, add the following to your .env file:
 
-``` MAIL_MAILER=smtp
+```dotenv
+MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=587
 MAIL_USERNAME=your-mailtrap-username
@@ -43,18 +93,35 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 Start the queue and schedule workers:
 
-```./vendor/bin/sail artisan queue:work```
-```./vendor/bin/sail artisan schedule:work```
+```shell 
+./vendor/bin/sail artisan queue:work
+```
+
+```shell 
+./vendor/bin/sail artisan schedule:work
+```
 
 ## 5. Create Elasticsearch Index:
 
-```./vendor/bin/sail artisan elastic:create-index```
+```shell 
+./vendor/bin/sail artisan elastic:create-index
+```
 
 ## 6.Run Migrations & Seed Data
 
 Run migrations and seed data to set up your database:
 
-```./vendor/bin/sail artisan migrate --seed```
+```shell 
+./vendor/bin/sail artisan migrate --seed
+```
+
+## 7. Run the Storage Link Command
+
+Once Sail is up and running, execute the following command to create the symbolic link:
+
+```shell
+ ./vendor/bin/sail artisan storage:link 
+ ```
 
 # Frontend Setup (Website)
 
@@ -62,26 +129,37 @@ Run migrations and seed data to set up your database:
 
 In the frontend folder (website), copy the .env.example to .env:
 
-```cd website```
-``` cp .env.example .env```
+```shell 
+cd website
+```
+
+```shell 
+ cp .env.example .env
+ ```
 
 ## 2. Update API URL
 
 In the website/.env file, set the API_URL to the backend’s URL (usually http://localhost:80 if using Sail):
 
-```API_URL=http://localhost:80```
+```dotenv 
+API_URL=http://localhost:80
+```
 
 ## 3. Install Frontend Dependencies
 
 Install necessary JavaScript dependencies:
 
-``` yarn install```
+```shell
+ yarn install
+ ```
 
 ## 4. Start the Development Server
 
 Start the frontend development server:
 
-``` yarn dev```
+```shell 
+yarn dev
+```
 
 The frontend will be available at ```http://localhost:9000```.
 

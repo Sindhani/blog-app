@@ -10,6 +10,7 @@ const form = reactive(new Form({
 		content: null,
 		is_scheduled: false,
 		publish_date: null,
+		publish_time: null,
 		keywords: [],
 		seo_metadata: {meta_title: '', meta_description: null},
 		image: null
@@ -107,6 +108,25 @@ const post = async () => {
 												</q-icon>
 										</template>
 								</q-input>
+								<q-input v-if="form.is_scheduled" v-model="form.publish_time" :rules="['time']"
+												 dense
+												 label="Schedule Time"
+												 mask="time"
+												 outlined
+								>
+										<template v-slot:append>
+												<q-icon class="cursor-pointer" name="access_time">
+														<q-popup-proxy cover transition-hide="scale" transition-show="scale">
+																<q-time v-model="form.publish_time">
+																		<div class="row items-center justify-end">
+																				<q-btn v-close-popup color="primary" flat label="Close"/>
+																		</div>
+																</q-time>
+														</q-popup-proxy>
+												</q-icon>
+										</template>
+								</q-input>
+
 						</q-card-section>
 						<q-card-actions align="right">
 								<q-btn color="info" no-caps no-wrap @click="$router.push('/')"> Cancel</q-btn>

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Blog;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class BlogSeeder extends Seeder
 {
@@ -12,6 +14,19 @@ class BlogSeeder extends Seeder
      */
     public function run(): void
     {
-        Blog::factory()->count(200)->create();
+        $batchSize = 5000;
+        
+        for ($i = 0; $i < 200000; $i += $batchSize) {
+            $records = Blog::factory()
+                ->count($batchSize)
+                ->make()
+                ->transform(function ($item) {
+                    $item->slug = Str::slug($item->title);
+                    return $item;
+                })
+                ->makeHidden(['image_url'])
+                ->toArray();
+            DB::table('blogs')->insert($records);
+        }
     }
 }

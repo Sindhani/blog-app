@@ -7,6 +7,7 @@ use App\Dto\CommentDto;
 use App\Enum\BlogStatus;
 use App\Models\Blog;
 use App\Models\Comment;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
@@ -88,6 +89,7 @@ class BlogManagementService
             ->where('is_scheduled', true)
             ->where('status', BlogStatus::SCHEDULED)
             ->whereNotNull('publish_date')
+            ->whereDate('publish_date', Carbon::today()->format('Y-m-d'))
             ->get();
     }
 
