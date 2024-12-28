@@ -147,7 +147,7 @@ cd website
 In the website/.env file, set the API_URL to the backend’s URL (usually http://localhost:80 if using Sail):
 
 ```dotenv 
-API_URL=http://localhost:80
+API_URL=http://localhost:80/api
 ```
 
 ## 3. Install Frontend Dependencies
