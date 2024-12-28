@@ -13,9 +13,9 @@ class BlogSeeder extends Seeder
      */
     public function run(): void
     {
-        $batchSize = 50;
+        $batchSize = 5000;
 
-        for ($i = 0; $i < 100; $i += $batchSize) {
+        for ($i = 0; $i < 200000; $i += $batchSize) {
             $records = Blog::factory()
                 ->count($batchSize)
                 ->make()
